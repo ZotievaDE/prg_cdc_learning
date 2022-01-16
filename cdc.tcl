@@ -11,7 +11,7 @@ cd [file dirname [info script]]
 create_project $project_name "$project_name" -force
 
 # add sources
-add_files -norecurse trig_gen.v
+add_files -norecurse trig_gen.sv
 add_files -norecurse dff_tr.v
 add_files -norecurse cdc_test.sv
 

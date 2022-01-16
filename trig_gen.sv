@@ -1,4 +1,4 @@
-module trig_chain 
+module trig_gen
 #(parameter N = 4)
 (
     input           CLK1,
@@ -16,12 +16,12 @@ genvar i;
 
 generate 
     for (i=0; i<N; i = i+1) begin
-        dff_tr dff_inst[i] (.D(d_dff[i]), 
+        dff_tr dff_inst (.D(d_dff[i]), 
                             .CLK(clk_dff[i]), 
                             .Q(q_dff[i])
                             );
     end
-
+endgenerate
 
     
 endmodule

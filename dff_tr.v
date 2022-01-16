@@ -1,9 +1,9 @@
-module dff_tr (
+module dff_tr(
     input D,
     input CLK,
-    output Q
+    output reg Q
 );
     always @(posedge CLK) begin
-        Q <= D
+        Q <= D;
     end 
 endmodule

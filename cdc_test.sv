@@ -13,11 +13,8 @@ trig_gen inst_trg (
     .ODATA(ODATA));
 
 //тактирование
-    bit CLK1 = 0;
 	always #5 CLK1 = ~CLK1;
-    bit CLK2 = 0;
 	always #8 CLK2 = ~CLK2;
-    bit clk3 = 0;
 	always #14 CLK3 = ~CLK3;
 
 initial begin
