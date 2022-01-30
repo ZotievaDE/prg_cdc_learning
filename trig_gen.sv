@@ -1,5 +1,5 @@
 module trig_gen
-#(parameter N = 4)
+#(parameter N = 12)
 (
     input           CLK1,
     input           CLK2,
@@ -9,8 +9,24 @@ module trig_gen
 );
 logic [N-1 : 0] d_dff, clk_dff, q_dff;
 
-assign ODATA = q_dff;
-assign d_dff = IDATA;
+assign clk_dff[3] = CLK1;
+assign clk_dff[2] = CLK1;
+assign clk_dff[1] = CLK1;
+assign clk_dff[0] = CLK1;
+
+assign clk_dff[11] = CLK2;
+assign clk_dff[10] = CLK2;
+assign clk_dff[9] = CLK2;
+assign clk_dff[8] = CLK2;
+assign clk_dff[7] = CLK2;
+assign clk_dff[6] = CLK2;
+assign clk_dff[5] = CLK2;
+assign clk_dff[4] = CLK2;
+
+assign d_dff[3:0] = IDATA;
+assign d_dff[7:4] = q_dff[3:0];
+assign d_dff[11:8] = q_dff[7:4];
+assign ODATA = q_dff[11:8];
 
 genvar i;
 
